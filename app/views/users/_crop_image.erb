@@ -1,6 +1,5 @@
 <h3>Crop Image</h3>
 <%= image_tag @user.image_url(:large).to_s, :id => "cropbox"%>
-<h4>Preview</h4>
 <%= form_for @user, :html => {:remote => true} do |f| %>
 	<% %w[x y w h].each do |attribute| %>
 		<%= f.hidden_field "crop_#{attribute}" %>
