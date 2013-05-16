@@ -1,0 +1,3 @@
+$('#image_list ul').append("<li style='float:left;margin-left:10px;'><img src='<%= @user.image_url(:thumb).to_s %>' /><br/><a href='<%= user_path(@user) %>' data-confirm='Are you sure?' data-method='delete'>Destroy</a></li>");
+$('#myModal').trigger('reveal:close');
+$('#user_image').val('');

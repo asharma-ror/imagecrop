@@ -1,0 +1,15 @@
+development:
+  adapter: postgresql
+  database: imagecrop_development
+  username: postgres
+  password: postgres
+  pool: 5
+  host: localhost
+
+test:
+  adapter: postgresql
+  database: imagecrop_test
+  username: postgres
+  password: postgres
+  pool: 5
+  host: localhost

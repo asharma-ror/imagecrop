@@ -1,0 +1,12 @@
+<h1>Upload image</h1>
+
+<%= render 'form' %>
+
+<%#= link_to 'Back', users_path %>
+<div id="image_list" style="float:left;"><ul style="list-style:none;">
+	<% unless @users.blank? %>
+		<% @users.each do |user| %>
+	    <li style="float:left;margin-left:10px;"><%= image_tag user.image_url(:thumb).to_s %><br/><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+		<% end %>
+	<% end %>
+</ul></div>
