@@ -2,8 +2,7 @@ $("#myModal").html("<%= escape_javascript(render :partial => 'crop_image') %>");
 $('#cropbox').Jcrop({
     onChange: update_crop,
     onSelect: update_crop,
-    setSelect: [0, 0, 100, 100],
-    aspectRatio: 1
+    setSelect: [0, 0, 100, 100]
   });
 
   function update_crop(coords) {
