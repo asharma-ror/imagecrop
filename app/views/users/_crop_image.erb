@@ -5,7 +5,7 @@
 		<%= f.hidden_field "crop_#{attribute}" %>
 	<% end %>
 	<div class="actions">
-		<%= f.submit "Crop" %>
+		<%= f.submit "Crop" %><%= link_to image_tag("/assets/use_orgional.gif"), cancel_crop_path(@user), :remote => true %>
 	</div>
 <% end %>
-<a class='close-reveal-modal'>&#215;</a>
+<!--<a class='close-reveal-modal'>&#215;</a>-->

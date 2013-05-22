@@ -49,8 +49,22 @@ class UsersController < ApplicationController
         format.js
         format.json { render json: @user, status: :created, location: @user }
       else
+        @error = "There is some error please try later"
+        format.js
         format.html { render action: "new" }
         format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def cancel_crop
+    @user = User.find(params[:id])
+    respond_to do |format|
+      unless @user.blank?
+        format.js { render :update }
+      else
+        @error = "There is some error please try later"
+        format.js { render :update }
       end
     end
   end

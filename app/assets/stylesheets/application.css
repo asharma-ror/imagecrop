@@ -45,3 +45,7 @@ form .field, form .actions {
   margin: 12px 0;
 }
 
+.hide {
+  display: none;
+}
+

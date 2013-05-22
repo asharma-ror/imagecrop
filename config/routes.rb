@@ -1,7 +1,7 @@
 Imagecrop::Application.routes.draw do
   root :to => 'users#new'
   resources :users
-
+  match 'users/:id/cancel_crop' => 'users#cancel_crop', :as => :cancel_crop
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

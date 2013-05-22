@@ -1,12 +1,29 @@
 <h1>Upload image</h1>
-
+<div id="error"></div>
 <%= render 'form' %>
+<div id="image_list" style="float:left;">
+  <ul style="list-style:none;">
+    <% unless @users.blank? %>
+      <% @users.each do |user| %>
+        <li style="float:left;margin-left:10px;"><%= image_tag user.image_url(:thumb).to_s %><br/><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+      <% end %>
+    <% end %>
+  </ul>
+  <button id="upload" onclick="upload_image();">Upload</button><img id="spinner" src="/assets/ajax-loader.gif" class="hide">
+</div>
 
-<%#= link_to 'Back', users_path %>
-<div id="image_list" style="float:left;"><ul style="list-style:none;">
-	<% unless @users.blank? %>
-		<% @users.each do |user| %>
-	    <li style="float:left;margin-left:10px;"><%= image_tag user.image_url(:thumb).to_s %><br/><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></li>
-		<% end %>
-	<% end %>
-</ul></div>
+<script type="text/javascript">
+function upload_image(){
+  $('#user_image').click();
+  $("#upload").attr("disabled", "disabled");
+  $("#spinner").show();
+}
+
+$(function() {
+  $("#user_image").change(function() {
+    if ($.trim($(this).val()) != "") {
+      $('#new_user').submit();
+    }  
+  }); 
+}); 
+</script>
