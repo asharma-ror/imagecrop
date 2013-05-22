@@ -15,13 +15,13 @@
 <script type="text/javascript">
 function upload_image(){
   $('#user_image').click();
-  $("#upload").attr("disabled", "disabled");
-  $("#spinner").show();
 }
 
 $(function() {
   $("#user_image").change(function() {
     if ($.trim($(this).val()) != "") {
+      $("#upload").attr("disabled", "disabled");
+      $("#spinner").show();
       $('#new_user').submit();
     }  
   }); 
